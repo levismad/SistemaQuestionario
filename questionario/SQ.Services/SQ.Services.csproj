@@ -39,9 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contratos\GestaoFluxo\IServicoFluxo.cs" />
+    <Compile Include="Contratos\GestaoFluxo\IServicoQuestionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Contratos\GestaoQuestionario\" />
     <Folder Include="Request\" />
     <Folder Include="Response\" />
     <Folder Include="Service\" />
