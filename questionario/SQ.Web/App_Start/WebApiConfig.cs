@@ -11,7 +11,7 @@ namespace SQ.Web
         {
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "rest/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

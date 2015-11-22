@@ -1,4 +1,4 @@
-﻿using SQ.Services.App_Start;
+﻿using SQ.Services;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -20,12 +20,13 @@ namespace SQ.Web
         {
             AreaRegistration.RegisterAllAreas();
 
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            //WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
         }
 
-        protected void Application_Begin_Request(Object sender, EventArgs e)
+        protected void Application_BeginRequest(object sender, EventArgs e)
         {
             CultureInfo culture = (CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
             culture.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
@@ -41,7 +42,7 @@ namespace SQ.Web
         public class FirstRequest
         {
             public static bool initialized = false;
-            private static Object s_lock = new Object();
+            private static object s_lock = new object();
 
             public static void Initialize(HttpContext context) {
                 if (!initialized)

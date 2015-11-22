@@ -23,6 +23,8 @@ namespace SQ.Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Acesso", id = UrlParameter.Optional }
             );
+            routes.IgnoreRoute("rest/{*pathInfo}");
+            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" }); 
         }
     }
 }
