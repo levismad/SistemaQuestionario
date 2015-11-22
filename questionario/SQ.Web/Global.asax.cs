@@ -18,6 +18,7 @@ namespace SQ.Web
     {
         protected void Application_Start()
         {
+
             AreaRegistration.RegisterAllAreas();
 
             //WebApiConfig.Register(GlobalConfiguration.Configuration);
@@ -54,6 +55,7 @@ namespace SQ.Web
                             var host = HttpContext.Current.Request.Url.Host;
                             var connectionString = ConfigurationManager.ConnectionStrings[String.Format("connection_{0}", host)].ConnectionString;
                             (new AppHost(connectionString)).Init();
+                            initialized = true;
                         }
                     }
                 }

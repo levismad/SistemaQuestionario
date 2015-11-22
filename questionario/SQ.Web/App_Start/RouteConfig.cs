@@ -12,6 +12,8 @@ namespace SQ.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("api/{*pathInfo}");
+            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" }); 
 
             routes.MapRoute(
                 name: "Controller",
@@ -23,8 +25,6 @@ namespace SQ.Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Acesso", id = UrlParameter.Optional }
             );
-            routes.IgnoreRoute("rest/{*pathInfo}");
-            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" }); 
         }
     }
 }

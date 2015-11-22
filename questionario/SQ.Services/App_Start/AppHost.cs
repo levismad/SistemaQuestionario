@@ -12,7 +12,7 @@ namespace SQ.Services
     public class AppHost
             : AppHostBase
     {
-        public AppHost() : base("SQ Web Service", typeof(HelloService).Assembly) { }
+        //public AppHost() : base("SQ Web Service", typeof(HelloService).Assembly) { }
         public AppHost(string connectionString) : base("SQ Web Service", typeof(HelloService).Assembly)
         {
             this._connectionString = connectionString;
@@ -62,10 +62,6 @@ namespace SQ.Services
         }
         */
 
-        public void Init()
-        {
-            base.Init();
-        }
 
     }
 }
