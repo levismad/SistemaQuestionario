@@ -1,17 +1,14 @@
-﻿@{
-    Layout = null;
+﻿@using System.Text;
+@{
+    StringBuilder scritps = new StringBuilder();
+    scritps.AppendLine("<script type=\"text/javascript\">\n");
+    scritps.AppendLine("if (!window.console) window.console = {};");
+    scritps.AppendLine("if (!window.console.log) window.console.log = function () { };");
+    scritps.AppendLine("</script>");
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.LoadScripts = scritps.ToString();    
+    ViewBag.Title = "Home";
 }
+<h1>Acesso concedido</h1>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        
-    </div>
-</body>
-</html>
