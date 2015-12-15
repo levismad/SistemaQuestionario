@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SQ.Core\SQ.Core.csproj">
+      <Project>{0e9a8e83-8a9a-45c2-9e1d-a73bb00bbb71}</Project>
+      <Name>SQ.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQ.Dominio\SQ.Dominio.csproj">
       <Project>{5797c018-97d5-4f06-ae16-dd6a21ae0d31}</Project>
       <Name>SQ.Dominio</Name>

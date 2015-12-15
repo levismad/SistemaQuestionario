@@ -1,4 +1,4 @@
-﻿using SQ.Dominio.Interface;
+﻿using SQ.Core.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

@@ -6,6 +6,8 @@ using ServiceStack.WebHost.Endpoints;
 using SQ.Core.Repositorio;
 using Funq;
 using SQ.Core.Database;
+using SQ.Core.Services;
+using ServiceStack.Common.Web;
 
 namespace SQ.Services
 {
@@ -13,7 +15,8 @@ namespace SQ.Services
             : AppHostBase
     {
         //public AppHost() : base("SQ Web Service", typeof(HelloService).Assembly) { }
-        public AppHost(string connectionString) : base("SQ Web Service", typeof(HelloService).Assembly)
+        public AppHost(string connectionString)
+            : base("SQ Web Service", typeof(HelloService).Assembly)
         {
             this._connectionString = connectionString;
         }
@@ -30,8 +33,9 @@ namespace SQ.Services
               .Add<Hello>("/hello")
               .Add<Hello>("/hello/{Name*}");
 
-        }
 
+        }
+        
         /* Uncomment to enable ServiceStack Authentication and CustomUserSession
         private void ConfigureAuth(Funq.Container container)
         {

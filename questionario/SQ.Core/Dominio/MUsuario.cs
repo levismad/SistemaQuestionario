@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SQ.Dominio.Interface
+namespace SQ.Core.Dominio
 {
     public class MUsuario
     {

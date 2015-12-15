@@ -11,6 +11,7 @@ using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.ServiceInterface.ServiceModel;
 using ServiceStack.WebHost.Endpoints;
 using SQ.Core.Dominio;
+using SQ.Core.Services;
 
 namespace SQ.Services
 {
@@ -29,7 +30,8 @@ namespace SQ.Services
 	}
 
 	//Can be called via any endpoint or format, see: http://servicestack.net/ServiceStack.Hello/
-	public class HelloService : Service
+    [AuthSessionRequired]
+    public class HelloService 
 	{
 		public object Any(Hello request)
 		{

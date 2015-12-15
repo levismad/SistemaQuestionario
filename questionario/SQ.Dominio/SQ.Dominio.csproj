@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\MUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contratos\" />
+    <Folder Include="Interface\" />
     <Folder Include="Procedures\" />
     <Folder Include="Tabelas\" />
   </ItemGroup>
