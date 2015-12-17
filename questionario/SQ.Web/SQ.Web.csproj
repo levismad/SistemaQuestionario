@@ -166,6 +166,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\js\app.js" />
     <Content Include="Content\js\app\controllers\home\homeController.js" />
+    <Content Include="Content\js\app\services\baseService.js" />
+    <Content Include="Content\js\frameworks\angular-resource.min.js" />
     <Content Include="Content\js\frameworks\angular-route.min.js" />
     <Content Include="Content\js\frameworks\angular.js" />
     <Content Include="Content\js\frameworks\angular.min.js" />
