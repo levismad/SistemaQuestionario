@@ -1,9 +1,43 @@
-﻿//headers: { 'x-my-custom-header': 'some value' }
+﻿function isSet(obj) {
+    var result = false;
+    if (typeof (obj) != "undefined" && obj != null) {
+        return true;
+    }
+    return false;
+};
+window.isSet = isSet;
+
+window.ApiCall = function (url, dataType, succesFunction, errorFunction, customHeaders, wait) {
+    if (isSet(url) && isSet(dataType)) {
+
+        wait = (isSet(wait) && wait == true) ? true : false;
+        succesFunction = isSet(succesFunction) ? succesFunction : function () { };
+        errorFunction = isSet(errorFunction) ? errorFunction : function () { };
+        customHeaders = isSet(customHeaders) ? customHeaders : {};
+
+        if (wait) {
+            Carregando();
+        }
+        $.ajax({
+            url: url,
+            headers: customHeaders,
+            dataType: dataType,
+            cache: false,
+            success: succesFunction(),
+            error: errorFunction()
+        });
+        if (wait) {
+            PararCarregando();
+        }
+    }
+};
+
 var Carregando, PararCarregando, alerta, posAlertaOk;
 $(function () {
     $.ajaxSetup({
         cache: false
     });
+
     $("#botaoLogoff").click(function () {
         return location.href = "../Default.aspx?logoff=1";
     });
