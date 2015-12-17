@@ -164,6 +164,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\js\frameworks\core.js" />
     <Content Include="Content\js\ss-validation.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
