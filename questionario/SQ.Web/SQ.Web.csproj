@@ -168,6 +168,7 @@
     <Content Include="Content\js\frameworks\jquery-1.11.3.min.js" />
     <Content Include="Content\js\frameworks\jquery-ui.min.js" />
     <Content Include="Content\js\ss-validation.js" />
+    <Content Include="Content\Style\frameworks\css\jquery-ui.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -183,7 +184,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Image\" />
     <Folder Include="Content\Script\" />
-    <Folder Include="Content\Style\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +225,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Style\less\core.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

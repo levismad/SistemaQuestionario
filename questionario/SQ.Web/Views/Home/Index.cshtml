@@ -1,14 +1,35 @@
 ﻿@using System.Text;
 @{
-    StringBuilder scritps = new StringBuilder();
-    scritps.AppendLine("<script type=\"text/javascript\">\n");
-    scritps.AppendLine("if (!window.console) window.console = {};");
-    scritps.AppendLine("if (!window.console.log) window.console.log = function () { };");
-    scritps.AppendLine("</script>");
+    StringBuilder scripts = new StringBuilder();
+    scripts.AppendLine(@"<script type='text/javascript'>
+    $(function(){
+        if (!window.console) window.console = {};
+        if (!window.console.log) window.console.log = function () { };
+        $('#tabs').tabs();
+    });
+    </script>");
     
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.LoadScripts = scritps.ToString();    
+    ViewBag.LoadScripts = scripts.ToString();    
     ViewBag.Title = "Home";
 }
 <h1>Acesso concedido</h1>
 
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Questionário</a></li>
+        <li><a href="#tabs-2">Roteiros de Teste</a></li>
+    </ul>
+    <div id="tabs-1">
+        <div class="ui-widget-header padded">
+            Minhas Pendências
+            <div id="grid-questionário"></div>
+        </div>
+    </div>
+    <div id="tabs-2">
+        <div class="ui-widget-header padded">
+            Minhas Pendências
+            <div id="grid-migracao"></div>
+        </div>
+    </div>
+</div>
