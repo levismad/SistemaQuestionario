@@ -166,6 +166,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\js\frameworks\core.js" />
     <Content Include="Content\js\frameworks\jquery-1.11.3.min.js" />
+    <Content Include="Content\js\frameworks\jquery-ui.min.js" />
     <Content Include="Content\js\ss-validation.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
