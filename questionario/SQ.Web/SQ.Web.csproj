@@ -164,6 +164,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\app\controllers\home\homeController.js" />
+    <Content Include="Content\js\frameworks\angular-route.min.js" />
+    <Content Include="Content\js\frameworks\angular.js" />
+    <Content Include="Content\js\frameworks\angular.min.js" />
     <Content Include="Content\js\frameworks\core.js" />
     <Content Include="Content\js\frameworks\jquery-1.11.3.min.js" />
     <Content Include="Content\js\frameworks\jquery-ui.min.js" />
