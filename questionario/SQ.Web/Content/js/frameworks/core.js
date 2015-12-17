@@ -32,7 +32,31 @@ window.ApiCall = function (url, dataType, succesFunction, errorFunction, customH
     }
 };
 
-var Carregando, PararCarregando, alerta, posAlertaOk;
+var Carregando = function (mensagem) {
+    $("#loading>span").text(mensagem);
+    $("#loading").center();
+    return $("#loading").show();
+};
+var PararCarregando = function () {
+    return $("#loading").hide();
+};
+var posAlertaOk = {
+    pos: function () { }
+};
+var alerta = function (mensagem, options) {
+    if (!isSet(options)) {
+        options = {
+            pos: function () { }
+        };
+    }
+    $("#textoAlertaDialogo").text(mensagem);
+    $("#alert-dialog").dialog("open");
+    posAlertaOk = options;
+    return false;
+};
+String.prototype.trim = function () {
+    return this.replace(/^\s+|\s+$/g, "");
+};
 $(function () {
     $.ajaxSetup({
         cache: false
@@ -108,43 +132,19 @@ $(function () {
     });
     return false;
 });
-posAlertaOk = {
-    pos: function () { }
-};
-alerta = function (mensagem, options) {
-    if (options == null) {
-        options = {
-            pos: function () { }
-        };
-    }
-    $("#textoAlertaDialogo").text(mensagem);
-    $("#alert-dialog").dialog("open");
-    posAlertaOk = options;
-    return false;
-};
+
 jQuery.fn.center = function () {
     this.css("position", "absolute");
     this.css("top", ($(window).height() - this.height()) / 2 + $(window).scrollTop() + "px");
     this.css("left", ($(window).width() - this.width()) / 2 + $(window).scrollLeft() + "px");
     return this;
 };
-Carregando = function (mensagem) {
-    $("#loading>span").text(mensagem);
-    $("#loading").center();
-    return $("#loading").show();
-};
-PararCarregando = function () {
-    return $("#loading").hide();
-};
-String.prototype.trim = function () {
-    return this.replace(/^\s+|\s+$/g, "");
-};
-$(document).ajaxStart(function () {
-    Carregando();
-});
-$(document).ajaxComplete(function () {
-    PararCarregando();
-});
+//$(document).ajaxStart(function () {
+//    Carregando();
+//});
+//$(document).ajaxComplete(function () {
+//    PararCarregando();
+//});
 var clonarControle = function (controleOriginal, controleNovo, controleLocalizacao, boolCopiarValorAtual,
   boolInserirDentro, boolInserirAntes, boolInserirDepois) {
     if (boolInserirDentro) {
