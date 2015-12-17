@@ -1,4 +1,5 @@
-﻿using SQ.Dominio.Interface;
+﻿using SQ.Core.Dominio;
+//using SQ.Dominio.Interface;
 using SQ.Repositorio.Interface;
 using SQ.Web.Controllers.Base;
 using SQ.Web.Filter;

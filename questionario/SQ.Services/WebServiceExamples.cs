@@ -30,7 +30,7 @@ namespace SQ.Services
 	}
 
 	//Can be called via any endpoint or format, see: http://servicestack.net/ServiceStack.Hello/
-    [AuthSessionRequired]
+    //[AuthSessionRequired]
     public class HelloService 
 	{
 		public object Any(Hello request)

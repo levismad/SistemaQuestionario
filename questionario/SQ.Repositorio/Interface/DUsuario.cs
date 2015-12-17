@@ -12,16 +12,16 @@ namespace SQ.Repositorio.Interface
     {
         public MUsuario ConsultarUsuario(string business, string senha)
         {
-            var usuarioValidos = ConfigurationManager.AppSettings["UsuariosLiberados"];
-            var idUsuario = usuarioValidos.IndexOf(business.ToLower());
-            if (idUsuario == -1)
+            var usuarioValidos = ConfigurationManager.AppSettings["UsuariosLiberados"].Split(',').ToList();
+            var idUsuario = usuarioValidos.Where(x => x == business.ToLower()).FirstOrDefault();
+            if (idUsuario == null)
             {
                 throw new Exception("Login Inválido");
             }
 
             MUsuario usuario = new MUsuario();
             usuario.DataHoraUltimoLogin = DateTime.Now;
-            usuario.ebusiness = usuarioValidos[idUsuario].ToString();
+            usuario.ebusiness = idUsuario.ToString();
             usuario.senha = "";
 
             return usuario;
