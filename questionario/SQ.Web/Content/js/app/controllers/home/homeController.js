@@ -1,6 +1,6 @@
 ﻿angular.module('SQ.controllers', []).
 controller('homeController', ['Phone', function($scope, Phone) {
-    $scope.phones = Phone.query();
+    $scope.phones = {};//Phone.query();
     $scope.driversList = [
       {
           Driver: {

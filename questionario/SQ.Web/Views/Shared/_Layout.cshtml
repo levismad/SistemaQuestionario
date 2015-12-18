@@ -8,7 +8,7 @@
     <link href="~/Content/Style/frameworks/css/jquery-ui.css" rel="stylesheet" />
     @Html.Raw(ViewBag.ContentHeader)
 </head>
-<body ng-app="SQ" ng-controller="homeController">
+<body ng-app="SQ">
     @RenderBody()
 
     <footer>
@@ -21,7 +21,10 @@
     <script src="~/Content/js/frameworks/angular-resource.min.js"></script>
     <script src="~/Content/js/app.js"></script>
     <script src="~/Content/js/app/services/baseService.js"></script>
+    <script src="~/Content/js/app/services/wheater/wheaterService.js"></script>
     <script src="~/Content/js/app/controllers/home/homeController.js"></script>
+    <script src="~/Content/js/app/controllers/wheater/wheaterController.js"></script>
+
     @Html.Raw(ViewBag.LoadScripts)
 </body>
 </html>
